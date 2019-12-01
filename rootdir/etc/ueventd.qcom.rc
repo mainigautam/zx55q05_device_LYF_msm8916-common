@@ -269,7 +269,7 @@
 /dev/ramdump*             0640   system     system
 
 # Fingerprint device
-/sys/devices/virtual/input/input0              0660   system     system
+/dev/esfp0              0660   system     system
 
 #ImproveTouch device
 /dev/hbtp_input           0660   system     system
