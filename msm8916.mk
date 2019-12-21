@@ -126,8 +126,8 @@ PRODUCT_COPY_FILES += \
 endif
 
 # IRSC
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
+#PRODUCT_COPY_FILES += \
+#    $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
 
 # Keymaster
 ifneq ($(TARGET_PROVIDES_KEYMASTER),true)
