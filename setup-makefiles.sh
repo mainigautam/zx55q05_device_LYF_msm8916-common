@@ -37,7 +37,7 @@ fi
 setup_vendor "$DEVICE_COMMON" "$VENDOR" "$LINEAGE_ROOT" true
 
 # Copyright headers and guards
-write_headers "mobee01a"
+write_headers "zx55q05"
 
 write_makefiles "$MY_DIR"/proprietary-files.txt true
 
