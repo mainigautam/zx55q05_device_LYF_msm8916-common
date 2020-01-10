@@ -113,7 +113,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libshims_ims \
     libshim_boringssl \
-    libshims_camera
+    libshims_camera \
+    liblyf_camera \
+    libshim_skia  \
+    libshim_atomic
 
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl \

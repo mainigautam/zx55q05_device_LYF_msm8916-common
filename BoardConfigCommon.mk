@@ -86,11 +86,6 @@ USE_XML_AUDIO_POLICY_CONF := 1
 # Bluetooth
 BOARD_HAVE_BLUETOOTH_QCOM := true
 
-# Camera
-TARGET_NEEDS_LEGACY_CAMERA_HAL1_DYN_NATIVE_HANDLE := true
-TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
-    /system/vendor/bin/mm-qcamera-daemon=23
-
 # CNE
 BOARD_USES_QCNE := true
 
@@ -202,7 +197,14 @@ BOARD_SEPOLICY_DIRS += \
 
 # Shims
 TARGET_LD_SHIM_LIBS := \
-    /system/lib64/lib-imsvideocodec.so|libshims_ims.so
+    /system/lib64/lib-imsvideocodec.so|libshims_ims.so  \
+    /system/vendor/lib/hw/camera.msm8916.so|liblyf_camera.so \
+    /system/vendor/lib/hw/camera.msm8916.so|libshim_atomic.so \
+    /system/vendor/lib/libmmcamera2_imglib_modules.so|libshim_atomic.so \
+    /system/vendor/lib/libmmcamera2_imglib_modules.so|liblyf_camera.so \
+    /system/vendor/lib/libskia.so|libshim_skia.so \
+    /system/vendor/lib64/libskia.so|libshim_skia.so \
+    /system/vendor/lib/libC2D2.so|libshim_atomic.so
 
 # Telephony
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
