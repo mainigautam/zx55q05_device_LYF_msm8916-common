@@ -199,12 +199,19 @@ BOARD_SEPOLICY_DIRS += \
 TARGET_LD_SHIM_LIBS := \
     /system/lib64/lib-imsvideocodec.so|libshims_ims.so  \
     /system/vendor/lib/hw/camera.msm8916.so|liblyf_camera.so \
+    /system/vendor/lib/hw/camera.vendor.msm8916.so|libshim_atomic.so \
     /system/vendor/lib/hw/camera.msm8916.so|libshim_atomic.so \
     /system/vendor/lib/libmmcamera2_imglib_modules.so|libshim_atomic.so \
     /system/vendor/lib/libmmcamera2_imglib_modules.so|liblyf_camera.so \
     /system/vendor/lib/libskia.so|libshim_skia.so \
     /system/vendor/lib64/libskia.so|libshim_skia.so \
-    /system/vendor/lib/libC2D2.so|libshim_atomic.so
+    /system/vendor/lib/libC2D2.so|libshim_atomic.so \
+    /system/vendor/lib64/libizat_core.so|libshims_get_process_name.so \
+     /system/lib/hw/camera.msm8916.so|liblyf_camera.so \
+    /system/lib/hw/camera.vendor.msm8916.so|libshim_atomic.so \
+    /system/lib/hw/camera.msm8916.so|libshim_atomic.so \
+    /system/vendor/lib/hw/camera.vendor.msm8916.so|liblyf_camera.so
+
 
 # Telephony
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
@@ -223,3 +230,4 @@ TARGET_DISABLE_WCNSS_CONFIG_COPY := true
 WIFI_DRIVER_FW_PATH_AP := "ap"
 WIFI_DRIVER_FW_PATH_STA := "sta"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
+

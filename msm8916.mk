@@ -61,6 +61,16 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/external_camera_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/external_camera_config.xml
 
+# Camera properties
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.camera.cpp.duplication=false \
+    media.stagefright.legacyencoder=true \
+    media.stagefright.less-secure=true
+
+# Build libstlport for vendor blobs
+PRODUCT_PACKAGES += \
+    libstlport
+
 # Display
 PRODUCT_PACKAGES += \
     copybit.msm8916 \
@@ -116,7 +126,8 @@ PRODUCT_PACKAGES += \
     libshims_camera \
     liblyf_camera \
     libshim_skia  \
-    libshim_atomic
+    libshim_atomic \
+    libshims_get_process_name
 
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl \
@@ -165,8 +176,10 @@ PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@2.0-service-legacymm \
     vendor.lineage.livedisplay@2.0-service-sysfs
 
-# Media
+#Media
 PRODUCT_PACKAGES += \
+    libmm-omxcore \
+    libextmedia_jni \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxCore \
@@ -174,8 +187,8 @@ PRODUCT_PACKAGES += \
     libOmxQcelp13Enc \
     libOmxVdec \
     libOmxVenc \
-    libstagefrighthw
-
+    libstagefrighthw \
+    libstagefright_ccodec
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_codecs_$(TARGET_BOARD_PLATFORM_VARIANT).xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
